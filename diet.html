@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dash.css" />
+    <title>Diet Plans</title>
+</head>
+<body>
+    <!-- Same header as dashboard.html -->
+    <header>
+        <nav>
+            <!-- ... existing nav code ... -->
+        </nav>
+    </header>
+
+    <main class="diet">
+        <h1 class="page-title">Meal Planning</h1>
+        
+        <div class="meal-categories">
+            <div class="meal-card" onclick="showMealOptions('breakfast')">
+                <h2>Breakfast</h2>
+                <img src="assets/breakfast.jpeg" alt="Breakfast">
+                <p>Start your day right</p>
+                <span class="calories">300-400 calories</span>
+                <span class="view-options">View Meals →</span>
+            </div>
+
+            <div class="meal-card" onclick="showMealOptions('lunch')">
+                <h2>Lunch</h2>
+                <img src="assets/lunch.jpg" alt="Lunch">
+                <p>Midday fuel</p>
+                <span class="calories">400-600 calories</span>
+                <span class="view-options">View Meals →</span>
+            </div>
+
+            <div class="meal-card" onclick="showMealOptions('dinner')">
+                <h2>Dinner</h2>
+                <img src="assets/dinner.jpg" alt="Dinner">
+                <p>Evening nutrition</p>
+                <span class="calories">500-700 calories</span>
+                <span class="view-options">View Meals →</span>
+            </div>
+
+            <div class="meal-card" onclick="showMealOptions('snacks')">
+                <h2>Snacks</h2>
+                <img src="assets/snacks.png" alt="Snacks">
+                <p>Healthy bites</p>
+                <span class="calories">100-200 calories</span>
+                <span class="view-options">View Meals →</span>
+            </div>
+        </div>
+
+        <!-- Meal Options Modal -->
+        <div id="mealOptionsModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2 id="mealCategoryTitle"></h2>
+                <div id="mealOptionsList" class="meal-options-list"></div>
+            </div>
+        </div>
+
+        <!-- Recipe Modal -->
+        <div id="recipeModal" class="modal">
+            <div class="modal-content recipe-content">
+                <span class="close-modal">&times;</span>
+                <h2 id="recipeName"></h2>
+                <div class="recipe-details">
+                    <div class="recipe-info">
+                        <div id="recipeIngredients"></div>
+                        <div id="recipeInstructions"></div>
+                    </div>
+                    <div class="nutrition-info" id="nutritionInfo"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="diet.js"></script>
+</body>
+</html> 

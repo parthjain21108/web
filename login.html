@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FITPOINT LOGIN</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html"><img src="assets/logo-dark.png" alt="logo"></a>
+    </nav>
+    <div class="form-wrapper">
+        <h2>Welcome Back💪</h2>
+        <form id="loginForm" onsubmit="return validateLogin(event)">
+            <div class="form-control">
+                <input type="text" id="email" required>
+                <label>Email or phone number</label>
+            </div>
+            <div class="form-control">
+                <input type="password" id="password" required>
+                <label>Password</label>
+            </div>
+            <button type="submit">Login</button>
+            <div class="form-help"> 
+                <div class="remember-me">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <a href="index.html#login_help">Need help?</a>
+            </div>
+        </form>
+        <div id="errorMessage" style="color: red; margin-top: 10px; display: none;"></div>
+    </div>
+    <script>
+    function validateLogin(event) {
+        event.preventDefault();
+        
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const errorMessage = document.getElementById('errorMessage');
+        
+        // For demonstration, using a simple credential check
+        // In a real application, this should be handled by a backend server
+        const validCredentials = {
+            '1234': '1234',
+            'admin@example.com': 'admin123'
+        };
+        
+        if (validCredentials[email] && validCredentials[email] === password) {
+            // Store login status in localStorage (optional)
+            localStorage.setItem('isLoggedIn', 'true');
+            localStorage.setItem('userEmail', email);
+            
+            // Redirect to dashboard
+            window.location.href = 'dashboard.html';
+        } else {
+            errorMessage.style.display = 'block';
+            errorMessage.textContent = 'Invalid email or password';
+        }
+        
+        return false;
+    }
+    </script>
+</body>
+</html>

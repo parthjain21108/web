@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dash.css" />
+    <title>Body Composition</title>
+</head>
+<body>
+    <!-- Same header as dashboard.html -->
+    <header>
+        <nav>
+            <!-- ... existing nav code ... -->
+        </nav>
+    </header>
+
+    <main class="body-composition">
+        <h1 class="page-title">Body Composition Analysis</h1>
+
+        <div class="bmi-container">
+            <div class="bmi-card">
+                <h2>BMI Calculator</h2>
+                <form id="bmiForm" class="bmi-form">
+                    <div class="input-group">
+                        <label for="height">Height</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="height" step="0.01" required>
+                            <span class="unit">cm</span>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="weight">Weight</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="weight" step="0.1" required>
+                            <span class="unit">kg</span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn calculate-btn">Calculate BMI</button>
+                </form>
+
+                <div class="bmi-result" id="bmiResult">
+                    <div class="result-value">
+                        <span id="bmiValue">--</span>
+                        <span class="bmi-category" id="bmiCategory">Not calculated</span>
+                    </div>
+                    
+                    <div class="bmi-meter">
+                        <div class="meter-scale">
+                            <div class="meter-marker underweight">
+                                <span class="marker-label">Underweight</span>
+                                <span class="marker-value">&lt;18.5</span>
+                            </div>
+                            <div class="meter-marker normal">
+                                <span class="marker-label">Normal</span>
+                                <span class="marker-value">18.5-24.9</span>
+                            </div>
+                            <div class="meter-marker overweight">
+                                <span class="marker-label">Overweight</span>
+                                <span class="marker-value">25-29.9</span>
+                            </div>
+                            <div class="meter-marker obese">
+                                <span class="marker-label">Obese</span>
+                                <span class="marker-value">&gt;30</span>
+                            </div>
+                        </div>
+                        <div class="meter-pointer" id="bmiPointer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add new BMI History section -->
+        <div class="bmi-history-container">
+            <div class="bmi-history-card">
+                <h2>BMI History</h2>
+                <div class="chart-container">
+                    <canvas id="bmiChart"></canvas>
+                </div>
+                <div class="history-controls">
+                    <button id="addCurrentBMI" class="btn">Save Current BMI</button>
+                    <button id="clearHistory" class="btn btn-secondary">Clear History</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Add Chart.js before your script -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="body-composition.js"></script>
+</body>
+</html> 

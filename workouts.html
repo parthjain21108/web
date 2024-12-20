@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dash.css" />
+    <title>Workout Routines</title>
+</head>
+<body>
+    <!-- Same header as dashboard.html -->
+    <header>
+        <nav>
+            <!-- ... existing nav code ... -->
+        </nav>
+    </header>
+
+    <main class="workouts">
+        <h1 class="page-title">Workout Routines</h1>
+        
+        <div class="workout-splits">
+            <div class="split-card" onclick="showWorkoutDetails('push')">
+                <h2>Push Day</h2>
+                <img src="assets/push.jpg" alt="Push exercises">
+                <p>Chest, Shoulders, and Triceps</p>
+                <span class="view-details">View Exercises →</span>
+            </div>
+
+            <div class="split-card" onclick="showWorkoutDetails('pull')">
+                <h2>Pull Day</h2>
+                <img src="assets/pull.jpg" alt="Pull exercises">
+                <p>Back and Biceps</p>
+                <span class="view-details">View Exercises →</span>
+            </div>
+
+            <div class="split-card" onclick="showWorkoutDetails('legs')">
+                <h2>Legs Day</h2>
+                <img src="assets/leg.jpeg" alt="Leg exercises">
+                <p>Quadriceps, Hamstrings, and Calves</p>
+                <span class="view-details">View Exercises →</span>
+            </div>
+        </div>
+
+        <!-- Workout Details Modal -->
+        <div id="workoutModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2 id="modalTitle"></h2>
+                <div id="exerciseList" class="exercise-list"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="workouts.js"></script>
+</body>
+</html> 
